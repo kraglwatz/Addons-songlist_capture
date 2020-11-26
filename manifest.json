@@ -1,0 +1,23 @@
+{
+  "name": "Songlist Capture",
+  "version": "0.5",
+  "description": "Saves song list to file",
+  "manifest_version": 2,
+
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/mp3.jpg"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+	  "persistent": true
+  },
+
+  "permissions": [
+    "*://music.amazon.de/*","*://player.onleihe.de/*",
+    "storage"
+  ]
+}

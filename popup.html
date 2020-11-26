@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            #add_album {
+                float: left;
+            }
+            #popup_table {
+              font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            #albumlist td, #popup_table th {
+              font-size: small;
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            .genre {
+                width: 50px;
+            }
+            #albumlist tr:nth-child(even){background-color: #f2f2f2;}
+
+            #albumlist tr:hover {background-color: #ddd;}
+
+            #popup_table th {
+              padding-top: 8px;
+              padding-bottom: 8px;
+              text-align: center;
+              background-color: #4CAF50;
+              color: white;
+            }
+        </style>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body style="width: 450px">
+        <button id="add_album" style="float:left"><i class="fa fa-plus" aria-hidden="true" style="font-size:24px;"></i></button>
+        </center><button id="delete_all" ><i class="material-icons" style="font-size:24px">delete</i></button>
+        <button id="download" style="float:right; font-size: 24px;"><i class="fa fa-download"></i></button>
+        <table id="popup_table">
+            <colgroup>
+                <col span="1" style="width: 5%;">
+                <col span="1" style="width: 65%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 5%; margin: auto;">
+             </colgroup>
+             <thead>
+                <th>#</th>
+                <th style="text-align:left;">album</th>
+                <th>songs</th>
+                <th>genre</th>
+                <th>delete</th>
+            </thead>
+            <tbody  id="albumlist">
+                <!-- stored content goes here -->
+            </tbody>
+        </table>
+        <script type="text/javascript" src="popup.js"></script>
+    </body>
+</html>
