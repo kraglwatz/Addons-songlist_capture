@@ -138,16 +138,17 @@ amazon = {
 		var p1 = getAttributeByXPath("@primary-text",el);
 		var p2 = getAttributeByXPath("@secondary-text-1",el,"");
 		var p3 = getAttributeByXPath("@secondary-text-2",el,"");
+		var p4 = getAttributeByXPath("@secondary-text",el,"");
 		var img = getAttributeByXPath("@image-src",el,null);
 		var popularity = getAttributeByXPath(".//music-popularity-bar/@rating",el,0)/getAttributeByXPath(".//music-popularity-bar/@max-rating",el,10);
-		var trackno = parseInt(getContentByXPath("./span[@class='index']",el));
-		var duration = getAttributeByXPath(".//div[@class='col4']/music-link/@title",el,0);
+		var trackno = parseInt(getContentByXPath("./span[@class='index']",el,0));
+		var duration = getAttributeByXPath(".//div[@class='col4']/music-link/@title",el,null);
 		console.debug("info: ",p1,p2,img,popularity,el);
 		console.debug("info2: ",trackno,duration);
 		var track = {
 			discnumber: 0,
 			trackno: trackno,
-			duration: convert.time(duration),
+			duration: duration ? convert.time(duration) : 0,
 			title: p1,
 			artist: p3,
 			album: p2,
